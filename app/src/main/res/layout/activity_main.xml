@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/conductorSectionSurface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/conductorSectionSurfaceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Presjek vodica - A [mm^2]"
+                android:inputType="numberDecimal|numberSigned"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/conductorDiameter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/conductorSectionSurface">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/conductorDiameterInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Promjer vodica - d [mm]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/mass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/conductorDiameter">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/massInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masa vodica - m [kg/m]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/malleabilityFactor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/mass">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/malleabilityFactorInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Koeficijent toplinskog istezanja - β [1/°C]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/excessWeightFactor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/malleabilityFactor">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/excessWeightFactorInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Faktor dodatnog tereta - k"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/elasticityModule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/excessWeightFactor">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/elasticityModuleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Modul elastičnosti - E [N/mm^2]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/normalStrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/elasticityModule">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/normalStrainInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Normalno dozvoljeno naprezanje - σd [N/mm^2]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/excessStrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/normalStrain">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/excessStrainInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Iznimno dozvoljeno naprezanje - σi [N/mm^2]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/maxStrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/excessStrain">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/maxStrainInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Maksimalno naprezanje - σmax [N/mm^2]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/poleSpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/maxStrain">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/poleSpanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Raspon nosača - aij [m]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/poleDenivelation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/poleSpan">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/poleDenivelationInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Denivelacija - hij [m]"
+                android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+        <!--      <android.support.design.widget.TextInputLayout
+                  android:id="@+id/mass9"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="15dp"
+                  app:layout_constraintTop_toBottomOf="@id/mass8">
+
+                  <android.support.design.widget.TextInputEditText
+                      android:id="@+id/b"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:hint="Određeno mjesto vodiča"
+                      android:inputType="numberDecimal|numberSigned" />
+        </android.support.design.widget.TextInputLayout>
+        -->
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Izračunaj"
+            app:layout_constraintTop_toBottomOf="@id/poleDenivelation" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>
